@@ -5,29 +5,29 @@ function сaesar(input, type) {
     let bigEnd = 90;
     let smallStart = 97;
     let smallEnd = 122;
-    let res;
+    let result;
     if (!regExp.test(input)) {
-      res = input;
+      result = input;
     } else {
       if (type === "C1") {
         if (charcode === bigEnd) {
-          res = String.fromCharCode(bigStart);
+            result = String.fromCharCode(bigStart);
         } else if (charcode === smallEnd) {
-          res = String.fromCharCode(smallStart);
+            result = String.fromCharCode(smallStart);
         } else {
-          res = String.fromCharCode(charcode + 1);
+            result = String.fromCharCode(charcode + 1);
         }
       }
       if (type === "C0") {
         if (charcode === bigStart) {
-          res = String.fromCharCode(bigEnd);
+            result = String.fromCharCode(bigEnd);
         } else if (charcode === smallStart) {
-          res = String.fromCharCode(smallEnd);
+            result = String.fromCharCode(smallEnd);
         } else {
-          res = String.fromCharCode(charcode - 1);
+            result = String.fromCharCode(charcode - 1);
         }
       }
     }
-    return res;
+    return result;
   }
   
