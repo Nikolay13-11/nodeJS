@@ -1,4 +1,4 @@
-function сaesar(input, type) {
+module.exports = function сaesar(input, type) {
     const regExp = /[A-Za-z]/g;
     let charcode = input.charCodeAt();
     let bigStart = 65;
@@ -30,4 +30,5 @@ function сaesar(input, type) {
     }
     return result;
   }
+
   
