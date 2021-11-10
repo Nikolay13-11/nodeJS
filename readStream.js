@@ -12,7 +12,7 @@ if(input) {
         Rstream = fs.createReadStream(path.resolve(input), 'utf-8')
    }
    else {
-    process.stderr.write("Error");
+    process.stderr.write("File not found");
     process.exit();
    }
 }
