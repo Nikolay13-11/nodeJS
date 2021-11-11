@@ -11,7 +11,7 @@ const args = process.argv.reduce((acc, item, index, arr) => {
   
   module.exports = args;
   
-  console.log(args);
+  // console.log(args);
   
   const validConf = "C1-R1-C0-C0-A-R0-R1-R1-A-C1";
   const notvalidConf = "C1-A-";
@@ -46,6 +46,6 @@ const args = process.argv.reduce((acc, item, index, arr) => {
     }
   }
   
-  console.log("validConf: ", isValidConf(validConf));
-  console.log("notvalidConf: ", isValidConf(notvalidConf));
+  // console.log("validConf: ", isValidConf(validConf));
+  // console.log("notvalidConf: ", isValidConf(notvalidConf));
   
