@@ -3,7 +3,6 @@ const path = require('path')
 const { input } = require("./config");
 
 
-
 const exsistFile = fs.existsSync(path.resolve(input))
 let Rstream
 

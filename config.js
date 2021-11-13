@@ -9,9 +9,9 @@ const args = process.argv.reduce((acc, item, index, arr) => {
     return acc;
   }, {});
   
-  module.exports = args;
+
   
-  // console.log(args);
+
   
   const validConf = "C1-R1-C0-C0-A-R0-R1-R1-A-C1";
   const notvalidConf = "C1-A-";
@@ -23,6 +23,7 @@ const args = process.argv.reduce((acc, item, index, arr) => {
       return configArr.every((elem) => isValidElem(elem));
     }
     configArr = config.split("-");
+    args.arrConf = configArr
     return configArr.every((elem) => isValidElem(elem));
   }
   
@@ -45,7 +46,11 @@ const args = process.argv.reduce((acc, item, index, arr) => {
       return false;
     }
   }
+
+ isValidConf(args.config)
   
   // console.log("validConf: ", isValidConf(validConf));
   // console.log("notvalidConf: ", isValidConf(notvalidConf));
+  module.exports = args;
+
   

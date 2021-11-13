@@ -45,6 +45,10 @@ const args = process.argv.reduce((acc, item, index, arr) => {
       return false;
     }
   }
+
+  if(isValidConf) {
+    console.log('config - ', args.config)
+  }
   
   // console.log("validConf: ", isValidConf(validConf));
   // console.log("notvalidConf: ", isValidConf(notvalidConf));
