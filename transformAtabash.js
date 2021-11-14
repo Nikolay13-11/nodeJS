@@ -10,16 +10,12 @@ class TransformA extends Transform {
         super()
     }
     _transform(chunk, enc, cb) {
-        let res = '';
-        chunk.toString().split('').forEach(symbal => {
-            res += atabash(symbal)
-        });
-
-        this.push(res)
+        let result = atabash(chunk.toString().split(''));
+        this.push(result)
 
         cb()
     }
 }
 
 
-module.exports = new TransformA()
+module.exports = TransformA

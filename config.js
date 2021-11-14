@@ -8,14 +8,7 @@ const args = process.argv.reduce((acc, item, index, arr) => {
     }
     return acc;
   }, {});
-  
 
-  
-
-  
-  const validConf = "C1-R1-C0-C0-A-R0-R1-R1-A-C1";
-  const notvalidConf = "C1-A-";
-  
   function isValidConf(config) {
     let configArr;
     if (config[config.length - 1] === "-") {
@@ -49,8 +42,6 @@ const args = process.argv.reduce((acc, item, index, arr) => {
 
  isValidConf(args.config)
   
-  // console.log("validConf: ", isValidConf(validConf));
-  // console.log("notvalidConf: ", isValidConf(notvalidConf));
   module.exports = args;
 
   

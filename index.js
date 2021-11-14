@@ -2,38 +2,36 @@ const { pipeline } = require('stream')
 const readStream = require('./readStream')
 const writeStream = require('./writeStream')
 const transformCaesar = require('./transformCaesar')
-const transformRot = require('./rot8')
-const transformAtabash = require('./atabash')
+const transformRot = require('./transformROT')
+const transformAtabash = require('./transformAtabash')
 const arrayConfig = require('./config')
 
-// console.log(arrayConfig.arrConf)
+const w = process.stdout
+const r = process.stdin
 
 let transformParams = arrayConfig.arrConf.map(type => {
     if (type === 'C1' || type === 'C0') {
-        return transformCaesar
+        return new transformCaesar(type)
     }
     else if (type === 'R1' || type === 'R0') {
-        return transformRot
+        return new transformRot(type)
     }
     else if (type === 'A') {
-        return transformAtabash
+        return new transformAtabash()
     }
 })
 
-// console.log(transformParams);
-
-let streams = [ readStream, transformCaesar, transformRot, transformAtabash, writeStream ]
+// const a = new transformRot('R1')
 
 
 pipeline(
-    readStream, 
-    ...streams,
+    readStream,
+    ...transformParams,
     writeStream,
     (err) => {
         (err) ? console.error('problem with pipeline...', err) : console.log('pipeline succeded') 
     }
 )
+
+
  
-
-
-

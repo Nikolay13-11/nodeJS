@@ -1,25 +1,18 @@
-const {Transform} = require('stream');
-const rot = require('./rot8')
-
-
-const r = process.stdin
-const w = process.stdout
+const {Transform, pipeline} = require('stream');
+const rot = require('./rot8');
 
 class TransformR extends Transform {
-    constructor() {
+    constructor(type) {
         super()
+        this.type = type
     }
     _transform(chunk, enc, cb) {
-        let res = '';
-        chunk.toString().split('').forEach(symbal => {
-            res += rot(symbal, 'R1')
-        });
-
-        this.push(res)
+        let result = rot(chunk.toString().split(''), this.type)
+        this.push(result)
 
         cb()
     }
 }
 
+module.exports = TransformR
 
-module.exports = new TransformR()
