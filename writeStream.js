@@ -2,20 +2,22 @@ const fs = require('fs')
 const path = require('path')
 const { output } = require("./config");
 
-const exsistFile = fs.existsSync(path.resolve(output))
-
 let Wstream 
 
-if(output) {
+if(output !== undefined) {
+    const exsistFile = fs.existsSync(path.resolve(output))
     if(exsistFile) {
-        Wstream = fs.createWriteStream(path.resolve(output))
+        Wstream = fs.createWriteStream(path.resolve(output), {
+            flags: 'a'
+        })
     }
     else {
         process.stderr.write("File not found");
-        process.exit();
+        process.exit(0);
     }
 }
 else {
+
     Wstream = process.stdout
 }
 

@@ -1,10 +1,6 @@
 const {Transform} = require('stream');
 const atabash = require('./atabash')
 
-
-const r = process.stdin
-const w = process.stdout
-
 class TransformA extends Transform {
     constructor() {
         super()
@@ -16,6 +12,5 @@ class TransformA extends Transform {
         cb()
     }
 }
-
 
 module.exports = TransformA

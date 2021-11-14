@@ -9,39 +9,8 @@ const args = process.argv.reduce((acc, item, index, arr) => {
     return acc;
   }, {});
 
-  function isValidConf(config) {
-    let configArr;
-    if (config[config.length - 1] === "-") {
-      const configArr = config.slice(0, -1).split("-");
-      return configArr.every((elem) => isValidElem(elem));
-    }
-    configArr = config.split("-");
-    args.arrConf = configArr
-    return configArr.every((elem) => isValidElem(elem));
-  }
-  
-  function isValidElem(el) {
-    return el.length === 1
-      ? isValidAtbash(el)
-      : el.length === 2
-      ? isValidCaesar(el)
-      : false;
-  }
-  
-  function isValidAtbash(el) {
-    return el === "A" ? true : false;
-  }
-  
-  function isValidCaesar(el) {
-    if (el[0] === "C" || el[0] === "R") {
-      return Number(el[1]) <= 1 ? true : false;
-    } else {
-      return false;
-    }
-  }
 
- isValidConf(args.config)
-  
-  module.exports = args;
+module.exports = args;
+
 
   
