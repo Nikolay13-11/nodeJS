@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_iphering_cli_tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikolay13-11/nodeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikolay13-11/nodeJS/issues"
+  },
+  "homepage": "https://github.com/Nikolay13-11/nodeJS#readme"
+}
