@@ -7,7 +7,7 @@ class TransformC extends Transform {
         this.type = type
     }
     _transform(chunk, enc, cb) {
-        let result = caesar(chunk.toString().split(''), this.type);
+        let result = caesar(chunk.toString(), this.type);
         this.push(result)
 
         cb()

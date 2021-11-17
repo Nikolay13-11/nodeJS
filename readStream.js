@@ -1,6 +1,9 @@
 const fs = require('fs')
 const path = require('path')
-const { input } = require("./config");
+const { funcWithArgs } = require("./config")
+const { input } = funcWithArgs
+
+
 
 let Rstream
 

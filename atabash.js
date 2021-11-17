@@ -4,7 +4,7 @@ module.exports = function atbash(chank) {
     let smallStart = 97;
     let smallEnd = 122;
     let result = '';
-    chank.forEach(input => {
+    chank.split('').forEach(input => {
       let charcode = input.charCodeAt();
       if (charcode < bigStart || charcode > smallEnd) {
         result += input;

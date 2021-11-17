@@ -7,7 +7,7 @@ class TransformR extends Transform {
         this.type = type
     }
     _transform(chunk, enc, cb) {
-        let result = rot(chunk.toString().split(''), this.type)
+        let result = rot(chunk.toString(), this.type)
         this.push(result)
 
         cb()

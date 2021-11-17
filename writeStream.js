@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const { output } = require("./config");
+const { funcWithArgs } = require("./config")
+const { output } = funcWithArgs
 
 let Wstream 
 

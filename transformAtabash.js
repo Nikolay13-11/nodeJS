@@ -6,7 +6,7 @@ class TransformA extends Transform {
         super()
     }
     _transform(chunk, enc, cb) {
-        let result = atabash(chunk.toString().split(''));
+        let result = atabash(chunk.toString());
         this.push(result)
 
         cb()
