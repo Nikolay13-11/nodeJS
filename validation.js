@@ -1,9 +1,11 @@
-const { funcWithArgs } = require("./config");
 const validFunction = require('./helpers')
+const  configFunction  = require("./config")
+
+const { config } = configFunction(process.argv)
 
 let obj = {}
 // let test = conf(process.argv)
-const { config }  = funcWithArgs
+
 
 
 function isValidConf(config) {

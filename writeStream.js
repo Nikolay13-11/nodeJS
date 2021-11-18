@@ -1,25 +1,26 @@
 const fs = require('fs')
 const path = require('path')
-const { funcWithArgs } = require("./config")
-const { output } = funcWithArgs
+const configFunction  = require("./config")
 
-let Wstream 
+const { output } = configFunction(process.argv)
 
-if(output !== undefined) {
-    const exsistFile = fs.existsSync(path.resolve(output))
-    if(exsistFile) {
-        Wstream = fs.createWriteStream(path.resolve(output), {
-            flags: 'a'
-        })
+module.exports = function ReadStream(output) {
+    let Wstream 
+    if(output !== undefined) {
+        const exsistFile = fs.existsSync(path.resolve(output))
+        if(exsistFile) {
+            Wstream = fs.createWriteStream(path.resolve(output), {
+                flags: 'a'
+            })
+        }
+        else {
+            process.stderr.write("File not found");
+            process.exit(0);
+        }
     }
     else {
-        process.stderr.write("File not found");
-        process.exit(0);
+    
+        Wstream = process.stdout
     }
+    return Wstream
 }
-else {
-
-    Wstream = process.stdout
-}
-
-module.exports = Wstream

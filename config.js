@@ -1,6 +1,6 @@
 const validFunction = require('./helpers')
 
-function getArgsFromConsoleInput(inputArray) {
+module.exports = function getArgsFromConsoleInput(inputArray) {
       const args = inputArray.reduce((acc, item, index, arr) => {
         let e = arr[index]
         if (item === "-c" || item === "--config") {
@@ -33,7 +33,7 @@ function getArgsFromConsoleInput(inputArray) {
           return args
         }
         else {
-          throw new Error(`config wasn't pass`)
+          throw new Error(`pass wrong config`)
         }
       }
       else {
@@ -42,8 +42,5 @@ function getArgsFromConsoleInput(inputArray) {
     }
 
 
-    module.exports = {
-      clearFunc: getArgsFromConsoleInput,
-      funcWithArgs: getArgsFromConsoleInput(process.argv),
-    }
 
+    
