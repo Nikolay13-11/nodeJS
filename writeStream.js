@@ -1,8 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const configFunction  = require("./config")
-
-const { output } = configFunction(process.argv)
 
 module.exports = function ReadStream(output) {
     let Wstream 

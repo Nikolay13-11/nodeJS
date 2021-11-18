@@ -1,9 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 
-
-
-
 module.exports = function ReadStream(input) {
     let Rstream
     if(input) {
