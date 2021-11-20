@@ -22,3 +22,13 @@ describe('Success scenarios', () => {
         expect(validState(cipherCode5)).toBe(true)
     })
 })
+
+describe('Error scenarios', () => {
+    test('correct sequence of symbols', () => {
+        expect(validState('C2')).toBe(false)
+        expect(validState('C')).toBe(false)
+        expect(validState('R3')).toBe(false)
+        expect(validState('R')).toBe(false)
+        expect(validState('A1')).toBe(false)
+    })
+})
