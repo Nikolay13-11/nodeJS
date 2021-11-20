@@ -12,7 +12,7 @@ module.exports = function ReadStream(output) {
         }
         else {
             process.stderr.write("File not found");
-            process.exit(0);
+            process.exit(1);
         }
     }
     else {

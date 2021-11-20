@@ -1,16 +1,28 @@
 const transformCaesar = require('./transformCaesar')
 const transformRot = require('./transformROT')
 const transformAtabash = require('./transformAtabash')
-const { configArray, validState } = require('./validation')
+const validState = require('./validation')
+const  configFunction  = require("./config")
+
+const { config } = configFunction(process.argv)
+const state = validState(config)
+
 
 let transformParams
 
-if(!validState) {
+if(!state) {
     process.stdout.write('Config params are wrong')
     process.exit(0);
 }
 else {
-    transformParams = configArray.map(type => {
+    let configArr;
+    if (config[config.length - 1] === "-") {
+        configArr = config.slice(0, -1).split("-");
+    }
+    else {
+        configArr = config.split("-");
+    }
+    transformParams = configArr.map(type => {
         if (type === 'C1' || type === 'C0') {
             return new transformCaesar(type)
         }

@@ -10,7 +10,7 @@ module.exports = function ReadStream(input) {
        }
        else {
         process.stderr.write("File not found");
-        process.exit(0);
+        process.exit(1);
        }
     }
     else {
@@ -18,7 +18,3 @@ module.exports = function ReadStream(input) {
     }
     return Rstream
 }
-
-
-
-

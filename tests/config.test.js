@@ -1,5 +1,5 @@
 const configFunction = require('../config')
-// // const { clearFunc } = config
+// const { clearFunc } = config
 
 describe('Error scenarios', () => {
     test('Input: User passes the same cli argument twice', () => {
@@ -18,7 +18,4 @@ describe('Error scenarios', () => {
         expect(() => configFunction(processArgv)).toThrow()
     })
 })
-
-
-
 
